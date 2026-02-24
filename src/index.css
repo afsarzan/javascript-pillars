@@ -2,49 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 7%;
-    --foreground: 0 0% 88%;
+    --background: 230 25% 5%;
+    --foreground: 200 20% 90%;
 
-    --card: 0 0% 12%;
-    --card-foreground: 0 0% 88%;
+    --card: 230 20% 10%;
+    --card-foreground: 200 20% 90%;
 
-    --popover: 0 0% 12%;
-    --popover-foreground: 0 0% 88%;
+    --popover: 230 20% 10%;
+    --popover-foreground: 200 20% 90%;
 
-    --primary: 51 93% 54%;
-    --primary-foreground: 0 0% 7%;
+    --primary: 175 100% 50%;
+    --primary-foreground: 230 25% 5%;
 
-    --secondary: 0 0% 18%;
-    --secondary-foreground: 0 0% 88%;
+    --secondary: 230 20% 15%;
+    --secondary-foreground: 200 20% 80%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 60%;
+    --muted: 230 15% 18%;
+    --muted-foreground: 200 10% 55%;
 
-    --accent: 180 65% 63%;
-    --accent-foreground: 0 0% 7%;
+    --accent: 280 100% 65%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 90% 55%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 51 93% 54%;
+    --border: 230 20% 18%;
+    --input: 230 20% 18%;
+    --ring: 175 100% 50%;
 
-    --radius: 0.5rem;
-    
-    --code-bg: 0 0% 0%;
-    --code-border: 0 0% 20%;
+    --radius: 0.75rem;
+
+    --code-bg: 230 30% 3%;
+    --code-border: 175 50% 20%;
+
+    --glow-primary: 175 100% 50%;
+    --glow-accent: 280 100% 65%;
   }
 
   .dark {
-    --background: 0 0% 7%;
-    --foreground: 0 0% 88%;
+    --background: 230 25% 5%;
+    --foreground: 200 20% 90%;
   }
 }
 
@@ -55,6 +56,18 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Rajdhani', 'Segoe UI', sans-serif;
+  }
+}
+
+@layer utilities {
+  .glow-primary {
+    box-shadow: 0 0 15px hsl(175 100% 50% / 0.3), 0 0 40px hsl(175 100% 50% / 0.1);
+  }
+  .glow-accent {
+    box-shadow: 0 0 15px hsl(280 100% 65% / 0.3), 0 0 40px hsl(280 100% 65% / 0.1);
+  }
+  .text-glow {
+    text-shadow: 0 0 10px hsl(175 100% 50% / 0.5), 0 0 30px hsl(175 100% 50% / 0.2);
   }
 }
